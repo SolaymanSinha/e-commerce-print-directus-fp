@@ -1,0 +1,22 @@
+services:
+  directus:
+    image: directus/directus:11.3.2
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      SECRET: "]MO$05nMW5=Q^{?"
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "d1r3ctu5"
+      WEBSOCKETS_ENABLED: "true"
+      # DATABASE - AIVEN
+      DB_CLIENT: "pg"
+      DB_CONNECTION_STRING: "postgresql://directus_owner:c0sUZtLu7jWT@ep-restless-leaf-a580mhhu.us-east-2.aws.neon.tech/directus?sslmode=require"
+      
+      # S3 STORAGE - SUPABASE
+      # STORAGE_<LOCATION>_DRIVER: 
+
+
