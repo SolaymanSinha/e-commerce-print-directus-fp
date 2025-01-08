@@ -8,15 +8,29 @@ services:
       - ./uploads:/directus/uploads
       - ./extensions:/directus/extensions
     environment:
-      SECRET: "]MO$05nMW5=Q^{?"
-      ADMIN_EMAIL: "admin@example.com"
-      ADMIN_PASSWORD: "d1r3ctu5"
-      WEBSOCKETS_ENABLED: "true"
-      # DATABASE - AIVEN
-      DB_CLIENT: "pg"
-      DB_CONNECTION_STRING: "postgresql://directus_owner:c0sUZtLu7jWT@ep-restless-leaf-a580mhhu.us-east-2.aws.neon.tech/directus?sslmode=require"
-      
+      SECRET: ']MO$05nMW5=Q^{?'
+      ADMIN_EMAIL: 'admin@example.com'
+      ADMIN_PASSWORD: 'd1r3ctu5'
+      WEBSOCKETS_ENABLED: 'true'
+      # DATABASE
+      DB_CLIENT: 'pg'
+      DB_HOST: host.docker.internal
+      DB_PORT: '5432'
+      DB_DATABASE: 'fp-e-commerce-print-directus'
+      DB_USER: 'shahsolaymansinha'
+      DB_PASSWORD: '@Programmer123'
+
+      # DB_CONNECTION_STRING: "postgresql://directus_owner:c0sUZtLu7jWT@ep-restless-leaf-a580mhhu.us-east-2.aws.neon.tech/directus?sslmode=require"
+
+      # DB_CONNECTION_STRING: "postgresql://shahsolaymansinha:@Programmer123@127.0.0.1:5432/fp-e-commerce-print-directus"
+
       # S3 STORAGE - SUPABASE
-      # STORAGE_<LOCATION>_DRIVER: 
-
-
+      # STORAGE_<LOCATION>_DRIVER:
+  # postgres:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_USER: shahsolaymansinha
+  #     POSTGRES_PASSWORD: '@Programmer123'
+  #     POSTGRES_DB: fp-e-commerce-print-directus
+  #   ports:
+  #     - '5432:5432'
